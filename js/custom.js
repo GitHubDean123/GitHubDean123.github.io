@@ -3,10 +3,10 @@ var OriginTitile = document.title;    // 保存之前页面标题
 var titleTime;
 document.addEventListener('visibilitychange', function(){
     if (document.hidden){
-        document.title = '404 Not Found';
+        document.title = 'Dean blog';
         clearTimeout(titleTime);
     }else{
-        document.title = '上当了吧哈哈！';
+        document.title = 'Welcome my blog';
         titleTime = setTimeout(function() {
             document.title = OriginTitile;
         }, 3000); // 3秒后恢复原标题
@@ -40,19 +40,19 @@ if (window.localStorage.getItem("fpson") == undefined || window.localStorage.get
 
       if (now > 1000 + lastTime) {
           var fps = Math.round((frame * 1000) / (now - lastTime));
-          if (fps <= 5) {
-              var kd = `一秒一帧🤢`
-          } else if (fps <= 15) {
-              var kd = `非常难受😖`
-          } else if (fps <= 25) {
-              var kd = `较低帧率😨`
-          } else if (fps < 35) {
-              var kd = `不太流畅🙄`
-          } else if (fps <= 45) {
-              var kd = `还不错哦😁`
-          } else {
-              var kd = `十分流畅🤣`
-          }
+          // if (fps <= 5) {
+          //     var kd = `一秒一帧🤢`
+          // } else if (fps <= 15) {
+          //     var kd = `非常难受😖`
+          // } else if (fps <= 25) {
+          //     var kd = `较低帧率😨`
+          // } else if (fps < 35) {
+          //     var kd = `不太流畅🙄`
+          // } else if (fps <= 45) {
+          //     var kd = `还不错哦😁`
+          // } else {
+          //     var kd = `十分流畅🤣`
+          // }
           document.getElementById("fps").innerHTML = `FPS:${fps} ${kd}`;
           frame = 0;
           lastTime = now;
